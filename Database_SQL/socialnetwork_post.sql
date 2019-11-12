@@ -1,0 +1,58 @@
+-- MySQL dump 10.13  Distrib 8.0.18, for Win64 (x86_64)
+--
+-- Host: localhost    Database: socialnetwork
+-- ------------------------------------------------------
+-- Server version	8.0.18
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!50503 SET NAMES utf8 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+--
+-- Table structure for table `post`
+--
+
+DROP TABLE IF EXISTS `post`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `post` (
+  `post_id` int(11) NOT NULL AUTO_INCREMENT,
+  `user_id` int(11) DEFAULT NULL,
+  `content` mediumtext CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `post_at` timestamp NULL DEFAULT NULL,
+  `view` int(11) DEFAULT NULL,
+  `link` varchar(200) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
+  `type` int(11) DEFAULT NULL,
+  PRIMARY KEY (`post_id`),
+  KEY `user_id` (`user_id`),
+  CONSTRAINT `post_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=76 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `post`
+--
+
+LOCK TABLES `post` WRITE;
+/*!40000 ALTER TABLE `post` DISABLE KEYS */;
+INSERT INTO `post` VALUES (1,18,'sad',NULL,NULL,NULL,NULL),(2,18,'sad',NULL,NULL,NULL,NULL),(3,18,'asdsad',NULL,NULL,NULL,NULL),(4,18,'asdsad',NULL,NULL,NULL,NULL),(5,18,'fdsfsadsad',NULL,NULL,NULL,NULL),(6,18,'fdsfsadsad',NULL,NULL,NULL,NULL),(7,18,'dasd',NULL,NULL,NULL,NULL),(8,18,'das',NULL,NULL,NULL,NULL),(9,18,'das',NULL,NULL,NULL,NULL),(10,18,'dsadsad',NULL,NULL,NULL,NULL),(11,18,'dsa',NULL,NULL,NULL,NULL),(12,18,'dsadsadsad',NULL,NULL,NULL,NULL),(13,18,'dsad',NULL,NULL,NULL,NULL),(14,18,'dsads',NULL,NULL,NULL,NULL),(15,18,'XZX','2019-11-06 11:00:33',NULL,NULL,2),(16,19,'asdadsa','2019-11-06 11:46:10',NULL,NULL,2),(17,19,'','2019-11-06 11:46:46',NULL,NULL,2),(18,20,'dasd','2019-11-06 12:21:55',NULL,NULL,2),(19,20,'dsad','2019-11-06 12:27:44',NULL,NULL,2),(20,20,'dsad','2019-11-06 12:32:30',NULL,NULL,2),(21,20,'dsad','2019-11-06 12:33:14',NULL,NULL,2),(22,20,'','2019-11-06 12:34:49',NULL,NULL,2),(23,20,'','2019-11-06 12:35:45',NULL,NULL,2),(24,20,'','2019-11-06 12:36:59',NULL,NULL,2),(25,21,'dsad','2019-11-06 12:38:06',NULL,NULL,2),(26,21,'dsad','2019-11-06 12:38:53',NULL,NULL,2),(27,21,'dasd','2019-11-06 12:40:53',NULL,'down-arrow8355366801124696865.png',2),(28,22,'dsad','2019-11-06 16:23:20',NULL,'google-play3492313767934500318.png',2),(29,25,'abc','2019-11-06 17:29:31',NULL,'app-store1418402364540475864.png',2),(30,25,'abc','2019-11-06 17:29:37',NULL,'bottom-shadow5280005103596735302.png',2),(31,25,'dasd','2019-11-06 17:29:43',NULL,'pattern1969820792394617939.png',2),(32,25,'hhjkj','2019-11-06 18:33:41',NULL,'blur2822052240563972134.png',2),(33,29,'sdasad','2019-11-07 04:30:40',NULL,'SampleVideo_1280x720_1mb7104753947847296243.mp4',3),(34,29,'sdasad','2019-11-07 04:34:40',NULL,'SampleVideo_1280x720_1mb4620648352645699542.mp4',3),(35,29,'sdasad','2019-11-07 04:35:00',NULL,'SampleVideo_1280x720_1mb6731121858386132444.mp4',3),(36,29,'dsad','2019-11-07 04:40:06',NULL,'SampleVideo_1280x720_1mb46206483526456995423048764247084083852.mp4',3),(37,29,'sadsad','2019-11-07 05:11:06',NULL,'SampleVideo_1280x720_1mb3808026910134940072.mp4',3),(38,29,'sadsad','2019-11-07 05:22:00',NULL,'blur28220522405639721341176042088809287201.png',2),(39,29,'dsad','2019-11-07 05:22:48',NULL,'bottom-shadow52800051035967353026011030794064575553.png',2),(40,29,'sdsad','2019-11-07 05:24:45',NULL,'bottom-shadow528000510359673530260110307940645755531235834142674325523.png',2),(41,29,'ssad','2019-11-07 05:25:47',NULL,'blur282205224056397213411760420888092872019059982034238716324.png',2),(42,29,'hjk','2019-11-07 05:25:56',NULL,'SampleVideo_1280x720_1mb2166062375360196968.mp4',3),(43,29,'sadsad','2019-11-07 05:45:43',NULL,'blur28220522405639721346959591537704136445.png',2),(44,30,'Xin chao`, moi` má»i dÃ¹ng friend finder, ráº¥t mong má»i ngÆ°á»i giÃºp Äá»¡','2019-11-07 16:24:47',NULL,'download4231316615083455397.png',2),(45,30,'dsad','2019-11-07 16:29:42',NULL,'logo-black4084549489161618340.png',2),(46,30,'HÃ´m nay mÃ¬nh ÄÃ£ ngá»i code tá»« sÃ¡ng 9h30 Äáº¿n 12h giá» tá»i, Än cÆ¡m máº¥t tá»« 1 tiáº¿ng buá»i trÆ°a, 1 tiáº¿ng buá»i tá»i, cÃ²n ÄÃ¢u code full @@','2019-11-07 16:48:23',NULL,'down-arrow1983225017658191060.png',2),(47,30,'xin chÃ o','2019-11-07 16:49:50',NULL,'bullet3518335594965714445.png',2),(48,30,'Ã¢ Ä sáº½ Ã  Ã¡ áº¡ áº£ ','2019-11-07 16:52:35',NULL,'envato4094147829209738123.png',2),(49,31,'Xin chÃ o táº¥t cáº£ má»i ngÆ°á»i','2019-11-07 16:55:53',NULL,'logo5198211885337127172.png',2),(50,31,'tiáº¿n Ã¡nh','2019-11-07 16:57:56',NULL,'google-play3905706834142940604.png',2),(51,31,'tiáº¿n Ã¡nh','2019-11-07 16:59:51',NULL,'google-play5004547874260272359.png',2),(52,31,'â b cc á à ạ','2019-11-07 17:03:47',NULL,'google-play1740843561296228332.png',2),(53,31,'â b cc á à ạ','2019-11-07 17:05:13',NULL,'google-play3384001512574674278.png',2),(54,31,'Xin chào tất cả mọi người','2019-11-07 17:05:29',NULL,'bullet5477869225477914245.png',2),(55,32,'xin chào','2019-11-07 17:29:09',NULL,'google-play8893810288417394279.png',2),(56,33,'xin chào','2019-11-08 12:22:03',NULL,'download3911773350195820170.png',2),(57,22,'hello mới','2019-11-08 13:08:17',NULL,'1new3853691544763887431.mp4',3),(58,22,'dsadsad','2019-11-08 13:45:04',NULL,'1new3836987376057691357.mp4',3),(59,22,'dsadsad','2019-11-08 14:46:22',NULL,'1new2663703467635212020.mp4',3),(60,22,'dsadsad','2019-11-08 14:52:31',NULL,'1new4590926195491691526.mp4',3),(61,22,'dsadas','2019-11-08 14:52:57',NULL,'1new2503209490193896496.mp4',3),(62,22,'tienanh','2019-11-08 15:03:08',NULL,'1new4106550324544295435.mp4',3),(63,22,'new post','2019-11-09 02:43:53',NULL,'blur6294043204899973220.png',2),(64,22,'Say hi\r\n','2019-11-09 02:46:59',NULL,'bottom-shadow7886477964021566610.png',2),(65,22,'sacsa','2019-11-09 02:49:56',NULL,'blur7919472135483429262.png',2),(66,34,'xin chào','2019-11-09 03:46:35',NULL,'blur449986972969054487.png',2),(67,34,'Pót 2\r\n','2019-11-09 03:47:29',NULL,'logo-black3475241595844827022.png',2),(68,35,'Xin chào mọi người, mình là thành viên mới, rất mong được làm quen với tất cả mọi người :3','2019-11-09 11:37:43',NULL,'3DS_SuperMarioMakerforNintendo3DS_char_01-800x8007864111831021805936.jpg',2),(69,35,'Video mới','2019-11-09 13:32:24',NULL,'Sample12804381045150520496947.mp4',3),(70,35,'Abstract post ','2019-11-09 13:35:54',NULL,'800x800-redlines-16899575716014720153.jpg',2),(71,35,'Horror Pictures','2019-11-09 13:36:12',NULL,'31383_p2752356084328371519.jpg',2),(72,35,'Penguin  is cute as you see in the movie at all','2019-11-09 13:36:52',NULL,'Baby.tux-800x8003618256376873575083.png',2),(73,22,'Xin chào toàn thể bà con, gia chủ mới cập nhật tính năng mới , update được bài nom đẹp hơn\r\nMisterious Post','2019-11-10 02:57:33',NULL,'displayimage.3604003266931315112jfif',2),(74,36,'Posst moiws','2019-11-11 04:07:12',NULL,'displayimage.287015393565105617jfif',2),(75,36,'video demo','2019-11-11 04:10:10',NULL,'Sample12802376396974326432230.mp4',3);
+/*!40000 ALTER TABLE `post` ENABLE KEYS */;
+UNLOCK TABLES;
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+-- Dump completed on 2019-11-12 19:54:10
