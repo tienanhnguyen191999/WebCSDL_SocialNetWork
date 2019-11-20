@@ -33,7 +33,7 @@
 			</div></li>
 		<li><i class="icon ion-chatboxes"></i>
 			<div>
-				<a href="newsfeed-messages">Tin nhắn</a>
+				<a href="newsfeed-messages.jsp">Tin nhắn</a>
 			</div></li>
 		<li><i class="icon ion-images"></i>
 			<div>

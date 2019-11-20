@@ -1,7 +1,7 @@
 
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<h3>Register Now !!!</h3>
+<h3>Đăng kí ngay !!!</h3>
 <p class="text-muted">Be cool and join today. Meet millions</p>
 
 <!--Register Form-->
@@ -9,21 +9,21 @@
 	class="form-inline" action="register" method="post">
 	<div class="row">
 		<div class="form-group col-xs-6">
-			<label for="firstname" class="sr-only">First Name</label> <input
+			<label for="firstname" class="sr-only">Tên</label> <input
 				id="fname" class="form-control input-group-lg" type="text"
-				name="fname" title="Enter first name" placeholder="First name"  autocomplete="off" required/>
+				name="fname" title="Enter first name" placeholder="Tên"  autocomplete="off" required/>
 		</div>
 		<div class="form-group col-xs-6">
-			<label for="lastname" class="sr-only">Last Name</label> <input
+			<label for="lastname" class="sr-only">Họ</label> <input
 				id="lname" class="form-control input-group-lg" type="text"
-				name="lname" title="Enter last name" placeholder="Last name" autocomplete="off" required/>
+				name="lname" title="Enter last name" placeholder="Họ" autocomplete="off" required/>
 		</div>
 	</div>
 	<div class="row">
 		<div class="form-group col-xs-12">
 			<label for="email" class="sr-only">Email</label> <input id="email"
 				class="form-control input-group-lg" type="text" name="email"
-				title="Enter Email" placeholder="Your Email" autocomplete="off" required />
+				title="Enter Email" placeholder="Email" autocomplete="off" required />
 			<small id="emailError" style="margin-left: 20px;color: red"></small>
 		</div>
 	</div>
@@ -69,20 +69,20 @@
 	</script>
 	<div class="row">
 		<div class="form-group col-xs-12">
-			<label for="password" class="sr-only">Password</label> <input
+			<label for="password" class="sr-only">Mật khẩu</label> <input
 				id="password" class="form-control input-group-lg" type="password"
-				name="password" title="Enter password" placeholder="Password" required/>
+				name="password" title="Enter password" placeholder="Mật khẩu" required/>
 			<small id="passwordError" style="margin-left: 20px;color: red"></small>
 		</div>
 	</div>
 	<div class="row">
 		<p class="birth">
-			<strong>Date of Birth</strong>
+			<strong>Năm Sinh</strong>
 		</p>
 		<div class="form-group col-sm-3 col-xs-6">
 			<label for="month" class="sr-only"></label> <select
 				class="form-control" id="day" name="day" required>
-				<option value="Day" disabled selected>Day</option>
+				<option value="Day" disabled selected>Ngày</option>
 				<option>1</option>
 				<option>2</option>
 				<option>3</option>
@@ -119,57 +119,62 @@
 		<div class="form-group col-sm-3 col-xs-6">
 			<label for="month" class="sr-only"></label> <select
 				class="form-control" id="month" name="month">
-				<option value="month" disabled selected>Month</option>
-				<option>Jan</option>
-				<option>Feb</option>
-				<option>Mar</option>
-				<option>Apr</option>
-				<option>May</option>
-				<option>Jun</option>
-				<option>Jul</option>
-				<option>Aug</option>
-				<option>Sep</option>
-				<option>Oct</option>
-				<option>Nov</option>
-				<option>Dec</option>
+				<option value="month" disabled selected>Tháng</option>
+				<option value="1">1</option>
+				<option value="2">2</option>
+				<option value="3">3</option>
+				<option value="4">4</option>
+				<option value="5">5</option>
+				<option value="6">6</option>
+				<option value="7">7</option>
+				<option value="8">8</option>
+				<option value="9">9</option>
+				<option value="10">10</option>
+				<option value="11">11</option>
+				<option value="12">12</option>
 			</select>
 		</div>
 		<div class="form-group col-sm-6 col-xs-12">
 			<label for="year" class="sr-only"></label> <select
 				class="form-control" id="year" name="year" required>
-				<option value="year" disabled selected>Year</option>
-				<option>2000</option>
-				<option>2001</option>
-				<option>2002</option>
-				<option>2004</option>
-				<option>2005</option>
-				<option>2006</option>
-				<option>2007</option>
-				<option>2008</option>
-				<option>2009</option>
-				<option>2010</option>
-				<option>2011</option>
-				<option>2012</option>
+				<option value="year" disabled selected>Năm</option>
+				<option value="1996">1996</option>
+				<option value="1997">1997</option>
+				<option value="1998">1998</option>
+				<option value="1999">1999</option>
+				<option value="2000">2000</option>
+				<option value="2001">2001</option>
+				<option value="2002">2002</option>
+				<option value="2003">2003</option>
+				<option value="2004">2004</option>
+				<option value="2005">2005</option>
+				<option value="2006">2006</option>
+				<option value="2007">2007</option>
+				<option value="2008">2008</option>
+				<option value="2009">2009</option>
+				<option value="2010">2010</option>
+				<option value="2011">2011</option>
+				<option value="2012">2012</option>
 			</select>
 		</div>
 	</div>
 	<div class="form-group gender">
 		<label class="radio-inline"> <input type="radio" name="gender" value="male"
-			checked >Male
+			checked >Nam
 		</label> <label class="radio-inline"> <input type="radio"
-			name="gender" value="female">Female
+			name="gender" value="female">Nữ
 		</label>
 	</div>
 	<div class="row">
 		<div class="form-group col-xs-6">
-			<label for="city" class="sr-only">City</label> <input id="city"
+			<label for="city" class="sr-only">Thành phố</label> <input id="city"
 				class="form-control input-group-lg reg_name" type="text" name="city"
-				title="Enter city" placeholder="Your city" />
+				title="Enter city" placeholder="Thành phố của bạn" />
 		</div>
 		<div class="form-group col-xs-6">
 			<label for="country" class="sr-only"></label> <select
 				class="form-control" id="country" name="country">
-				<option value="country" disabled selected>Country</option>
+				<option value="country" disabled selected>Đất nước</option>
 				<option value="AFG">Afghanistan</option>
 				<option value="ALA">�land Islands</option>
 				<option value="ALB">Albania</option>
@@ -426,9 +431,9 @@
 		</div>
 	</div>
 	<p>
-		<a href="#login" data-toggle="tab">Already have an account?</a>
+		<a href="#login" data-toggle="tab">Đã có tài khoản ? Đăng nhập ngay</a>
 	</p>
-	<button type="submit" class="btn btn-primary">Register Now</button>
+	<button type="submit" class="btn btn-primary">Đăng kí</button>
 </form>
 <!--Register Now Form Ends-->
 </div>

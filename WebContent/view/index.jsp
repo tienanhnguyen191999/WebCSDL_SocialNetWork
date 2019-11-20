@@ -1,7 +1,11 @@
 <!DOCTYPE html>
+<%@page import="com.model.User"%>
+<%@page import="java.sql.ResultSet"%>
+<%@page import="com.controller.MyUtils"%>
 <html lang="en">
 <head>
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <meta http-equiv="content-type" content="text/html; charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description"
@@ -9,7 +13,7 @@
 <meta name="keywords"
 	content="Social Network, Social Media, Make Friends, Newsfeed, Profile Page" />
 <meta name="robots" content="index, follow" />
-<title>Friend Finder | A Complete Social Network Template</title>
+<title>Friend Hub | A Complete Social Network Template</title>
 
 <!-- Stylesheets
     ================================================= -->
@@ -33,7 +37,7 @@
 	<div id="spinner-wrapper">
 		<div class="spinner"></div>
 	</div>
-		
+
 	<jsp:include page="template/header.jsp"></jsp:include>
 	<script type="text/javascript">
 		$('#header').addClass("lazy-load");
@@ -49,14 +53,14 @@
 			<!-- Sign Up Form
         ================================================= -->
 			<div class="sign-up-form">
-				<a href="index.jsp" class="logo"><img src="images/logo.png"
+				<a href="index.jsp" class="logo"><img style="width: 190px;" src="images/logo.png"
 					alt="Friend Finder" /></a>
-				<h2 class="text-white">Find My Friends</h2>
+				<h2 class="text-white">Tìm kiếm bạn bè</h2>
 				<div class="line-divider"></div>
 				<div class="form-wrapper">
-					<p class="signup-text">Signup now and meet awesome people
-						around the world</p>
-					<form action="#">
+					<a href="index-register.jsp">
+					<p class="signup-text">Đăng kí ngay để gặp gỡ hàng ngàn người bạn quanh thế giới</p>
+					<!-- <form action="#">
 						<fieldset class="form-group">
 							<input type="text" class="form-control" id="example-name"
 								placeholder="Enter name">
@@ -69,11 +73,12 @@
 							<input type="password" class="form-control" id="example-password"
 								placeholder="Enter a password">
 						</fieldset>
-					</form>
-					<p>By signning up you agree to the terms</p>
-					<button class="btn-secondary">Signup</button>
+					</form> -->
+					<p>Friend Finder - Nền tảng mạng xã hội kết nối mọi người</p>
+					<button class="btn-secondary">Đăng kí ngay</button>
+					</a>
 				</div>
-				<a href="#">Already have an account?</a> <img class="form-shadow"
+				<a href="index-register.jsp">Đã có tài khoản ? Đăng nhập ngay</a> <img class="form-shadow"
 					src="images/bottom-shadow.png" alt="" />
 			</div>
 			<!-- Sign Up Form End -->
@@ -96,30 +101,30 @@
 					<div class="feature-icon">
 						<i class="icon ion-person-add"></i>
 					</div>
-					<h3>Make Friends</h3>
+					<h3>Tìm kiếm bạn bè</h3>
 				</div>
 				<div class="feature-item col-md-2 col-sm-6 col-xs-6">
 					<div class="feature-icon">
 						<i class="icon ion-images"></i>
 					</div>
-					<h3>Publish Posts</h3>
+					<h3>Đăng bài viết</h3>
 				</div>
 				<div class="feature-item col-md-2 col-sm-6 col-xs-6">
 					<div class="feature-icon">
 						<i class="icon ion-chatbox-working"></i>
 					</div>
-					<h3>Private Chats</h3>
+					<h3>Chat riêng tư</h3>
 				</div>
 				<div class="feature-item col-md-2 col-sm-6 col-xs-6">
 					<div class="feature-icon">
 						<i class="icon ion-compose"></i>
 					</div>
-					<h3>Create Polls</h3>
+					<h3>Thăm dò ý kiến</h3>
 				</div>
 			</div>
-			<h2 class="sub-title">find awesome people like you</h2>
-			<div id="incremental-counter" data-value="5560"></div>
-			<p>People Already Signed Up</p>
+			<h2 class="sub-title">Tìm kiếm những người bạn tuyệt vời</h2>
+			<div id="incremental-counter" data-value="<%= MyUtils.getTotalUser()%>"></div>
+			<p>người đã đăng kí</p>
 			<img src="images/face-map.png" alt=""
 				class="img-responsive face-map slideUp hidden-sm hidden-xs" />
 		</div>
@@ -141,22 +146,22 @@
 						<div class="fact-icon">
 							<i class="icon ion-ios-people-outline"></i>
 						</div>
-						<h3 class="text-white">1,01,242</h3>
-						<p>People registered</p>
+						<h3 class="text-white"><%= MyUtils.getTotalUser() %></h3>
+						<p>người đăng kí</p>
 					</li>
 					<li>
 						<div class="fact-icon">
 							<i class="icon ion-images"></i>
 						</div>
-						<h3 class="text-white">21,01,242</h3>
-						<p>Posts published</p>
+						<h3 class="text-white"><%= MyUtils.getTotalPost() %></h3>
+						<p>bài viết</p>
 					</li>
 					<li>
 						<div class="fact-icon">
 							<i class="icon ion-checkmark-round"></i>
 						</div>
-						<h3 class="text-white">41,242</h3>
-						<p>People online</p>
+						<h3 class="text-white">2</h3>
+						<p>người đang online</p>
 					</li>
 				</ul>
 			</div>
@@ -167,142 +172,69 @@
     ================================================= -->
 	<section id="live-feed">
 		<div class="container wrapper">
-			<h1 class="section-title slideDown">live feed</h1>
+			<h1 class="section-title slideDown">Bài viết mới</h1>
 			<ul class="online-users list-inline slideUp">
-				<li><a href="#" title="Alexis Clark"><img
-						src="http://placehold.it/300x300" alt=""
+				<%
+					ResultSet rs = MyUtils.getAvatarIndexPage();
+					while (rs.next()) {
+				%>
+				<li><a href="#"
+					title="<%=rs.getString("fname")%>"><img
+						src="images/user/<%=rs.getString("avatar")%>" alt=""
 						class="img-responsive profile-photo" /><span class="online-dot"></span></a></li>
-				<li><a href="#" title="James Carter"><img
-						src="http://placehold.it/300x300" alt=""
-						class="img-responsive profile-photo" /><span class="online-dot"></span></a></li>
-				<li><a href="#" title="Robert Cook"><img
-						src="http://placehold.it/300x300" alt=""
-						class="img-responsive profile-photo" /><span class="online-dot"></span></a></li>
-				<li><a href="#" title="Richard Bell"><img
-						src="http://placehold.it/300x300" alt=""
-						class="img-responsive profile-photo" /><span class="online-dot"></span></a></li>
-				<li><a href="#" title="Anna Young"><img
-						src="http://placehold.it/300x300" alt=""
-						class="img-responsive profile-photo" /><span class="online-dot"></span></a></li>
-				<li><a href="#" title="Julia Cox"><img
-						src="http://placehold.it/300x300" alt=""
-						class="img-responsive profile-photo" /><span class="online-dot"></span></a></li>
+				<%
+					}
+					rs.close();
+				%>
 			</ul>
-			<h2 class="sub-title">see what's happening now</h2>
+			<h2 class="sub-title">Khám phá</h2>
 			<div class="row">
 				<div class="col-md-4 col-sm-6 col-md-offset-2">
+					<%
+						ResultSet rs1 = MyUtils.getPostInfoIndexPage();
+						int i = 0;
+						while (rs1.next()) {
+							i++;
+							User user = User.getUser(rs1.getInt("user_id"));
+					%>
 					<div class="feed-item">
-						<img src="http://placehold.it/300x300" alt="user"
+						<img src="images/user/<%=user.getAvatar()%>" alt="user"
 							class="img-responsive profile-photo-sm" />
 						<div class="live-activity">
 							<p>
-								<a href="#" class="profile-link">Sarah</a> just posted a photo
-								from Moscow
+								<a href="" class="profile-link"><%=user.getFname()%></a> vừa
+								đăng 1
+								<%=rs1.getInt("type") == 2 ? " ảnh" : " videos"%>
 							</p>
-							<p class="text-muted">20 Secs ago</p>
+							<p class="text-muted"><%=MyUtils.convertTimeStamp(rs1.getTimestamp("post_at"))%></p>
 						</div>
 					</div>
-					<div class="feed-item">
-						<img src="http://placehold.it/300x300" alt="user"
-							class="img-responsive profile-photo-sm" />
-						<div class="live-activity">
-							<p>
-								<a href="#" class="profile-link">John</a> Published a post from
-								Sydney
-							</p>
-							<p class="text-muted">1 min ago</p>
-						</div>
-					</div>
-					<div class="feed-item">
-						<img src="http://placehold.it/300x300" alt="user"
-							class="img-responsive profile-photo-sm" />
-						<div class="live-activity">
-							<p>
-								<a href="#" class="profile-link">Julia</a> Updated her status
-								from London
-							</p>
-							<p class="text-muted">5 mins ago</p>
-						</div>
-					</div>
-					<div class="feed-item">
-						<img src="http://placehold.it/300x300" alt="user"
-							class="img-responsive profile-photo-sm" />
-						<div class="live-activity">
-							<p>
-								<a href="#" class="profile-link">Sophia</a> Share a photo from
-								Virginia
-							</p>
-							<p class="text-muted">10 mins ago</p>
-						</div>
-					</div>
-					<div class="feed-item">
-						<img src="http://placehold.it/300x300" alt="user"
-							class="img-responsive profile-photo-sm" />
-						<div class="live-activity">
-							<p>
-								<a href="#" class="profile-link">Linda</a> just posted a photo
-								from Toronto
-							</p>
-							<p class="text-muted">20 mins ago</p>
-						</div>
-					</div>
+					<%
+						if (i > 4)
+								break;
+						}
+					%>
 				</div>
 				<div class="col-md-4 col-sm-6">
+					<%
+						while (rs1.next()) {
+							User user = User.getUser(rs1.getInt("user_id"));
+					%>
 					<div class="feed-item">
-						<img src="http://placehold.it/300x300" alt="user"
+						<img src="images/user/<%=user.getAvatar()%>" alt="user"
 							class="img-responsive profile-photo-sm" />
 						<div class="live-activity">
 							<p>
-								<a href="#" class="profile-link">Nora</a> Shared an article from
-								Ohio
+								<a href="" class="profile-link"><%=user.getFname()%></a> vừa
+								đăng 1
+								<%=rs1.getInt("type") == 2 ? " ảnh" : " videos"%>
 							</p>
-							<p class="text-muted">22 mins ago</p>
+							<p class="text-muted"><%=MyUtils.convertTimeStamp(rs1.getTimestamp("post_at"))%></p>
 						</div>
 					</div>
-					<div class="feed-item">
-						<img src="http://placehold.it/300x300" alt="user"
-							class="img-responsive profile-photo-sm" />
-						<div class="live-activity">
-							<p>
-								<a href="#" class="profile-link">Addison</a> Created a poll from
-								Barcelona
-							</p>
-							<p class="text-muted">23 mins ago</p>
-						</div>
-					</div>
-					<div class="feed-item">
-						<img src="http://placehold.it/300x300" alt="user"
-							class="img-responsive profile-photo-sm" />
-						<div class="live-activity">
-							<p>
-								<a href="#" class="profile-link">Diana</a> Posted a video from
-								Captown
-							</p>
-							<p class="text-muted">27 mins ago</p>
-						</div>
-					</div>
-					<div class="feed-item">
-						<img src="http://placehold.it/300x300" alt="user"
-							class="img-responsive profile-photo-sm" />
-						<div class="live-activity">
-							<p>
-								<a href="#" class="profile-link">Sarah</a> Shared friend's post
-								from Moscow
-							</p>
-							<p class="text-muted">30 mins ago</p>
-						</div>
-					</div>
-					<div class="feed-item">
-						<img src="http://placehold.it/300x300" alt="user"
-							class="img-responsive profile-photo-sm" />
-						<div class="live-activity">
-							<p>
-								<a href="#" class="profile-link">Emma</a> Started a new job at
-								Torronto
-							</p>
-							<p class="text-muted">33 mins ago</p>
-						</div>
-					</div>
+					<%
+						}rs1.close();
+					%>
 				</div>
 			</div>
 		</div>

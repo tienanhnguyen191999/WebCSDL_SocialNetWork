@@ -44,10 +44,10 @@
 				<div class="col-sm-5">
 					<div class="intro-texts">
 						<h1 class="text-white">Gặp gỡ những người bạn tuyệt vời!!!</h1>
-						<p>Friend Finder là 1 nền tảng mạng xã hội mà ở đó mọi người
-							kết nối với nhau. Frind Finder cung cấp cho bạn không gian để
+						<p>Friend Hub là 1 nền tảng mạng xã hội mà ở đó mọi người
+							kết nối với nhau. Freind Hub cung cấp cho bạn không gian để
 							giao lưu, kết bạn, chia sẻ những cảm xúc tuyệt vời. Hãy đăng kí
-							ngay hôm nay để trở thành thành của Friend Finder</p>
+							ngay hôm nay để trở thành thành của Friend Hub</p>
 						<button class="btn btn-primary">Tìm hiểu thêm</button>
 					</div>
 				</div>
@@ -57,8 +57,8 @@
 						<!-- Register/Login Tabs-->
 						<div class="reg-options">
 							<ul class="nav nav-tabs">
-								<li class="active"><a href="#register" data-toggle="tab">Register</a></li>
-								<li><a href="#login" data-toggle="tab">Login</a></li>
+								<li class="active"><a href="#register" data-toggle="tab">Đăng kí</a></li>
+								<li><a href="#login" data-toggle="tab">Đăng nhập</a></li>
 							</ul>
 							<!--Tabs End-->
 						</div>

@@ -191,4 +191,41 @@ public class MyUtils {
 		}
 
 	}
+	
+	// Remember to close every connection you open
+	public static ResultSet getAvatarIndexPage() throws Exception  {
+		con = new Dao().con;
+		String qr = "select * from user order by user_id desc limit 6";
+		PreparedStatement st = con.prepareStatement(qr);
+		ResultSet rs = st.executeQuery();
+		return rs;
+	}
+	
+	public static ResultSet getPostInfoIndexPage()  throws Exception{
+		con = new Dao().con;
+		String qr = "select * from post order by post_id desc limit 10";
+		PreparedStatement st = con.prepareStatement(qr);
+		ResultSet rs = st.executeQuery();
+		return rs;
+	}
+	
+	public static int getTotalUser() throws Exception {
+		con = new Dao().con;
+		String qr = "select count(*) from user ";
+		PreparedStatement st = con.prepareStatement(qr);
+		ResultSet rs = st.executeQuery();
+		rs.next();
+		int tmp =  rs.getInt("count(*)"); rs.close();
+		return tmp;
+	}
+	
+	public static int getTotalPost() throws Exception {
+		con = new Dao().con;
+		String qr = "select count(*) from post ";
+		PreparedStatement st = con.prepareStatement(qr);
+		ResultSet rs = st.executeQuery();
+		rs.next();
+		int tmp =  rs.getInt("count(*)"); rs.close();
+		return tmp;
+	}
 }

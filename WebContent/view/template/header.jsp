@@ -20,7 +20,7 @@
 						class="icon-bar"></span>
 				</button>
 				<a class="navbar-brand" href="<%= request.getSession().getAttribute("user_id") == null ? "index.jsp" : "newsfeed" %>"><img
-					src="images/logo.png" alt="logo" /></a>
+					 src="images/logo.png" alt="logo" style="width: 116px; "/></a>
 			</div>
 
 			<!-- Collect the nav links, forms, and other content for toggling -->
@@ -101,8 +101,8 @@
 									<div class="col-2">
 										<small class="timeStampNotification"><%=MyUtils.convertTimeStamp(rs.getTimestamp("noti_at"))%>&nbsp;trước</small>
 										<%  if ( rs.getInt("type") == 3){ %>
-										<button id="accept<%= rs.getInt("noti_id") %>">Đồng ý</button>
-										<button id="deny<%= rs.getInt("noti_id") %>">Từ chối</button>
+										<button style="background: black" id="accept<%= rs.getInt("noti_id") %>">Đồng ý</button>
+										<button style="background: black" id="deny<%= rs.getInt("noti_id") %>">Từ chối</button>
 										<% } %>
 									</div>
 							</a>
@@ -174,15 +174,13 @@
 						aria-expanded="false">Tài khoản<span><img
 								src="images/down-arrow.png" alt="" /></span></a>
 						<ul class="dropdown-menu page-list">
-							<li><a href="edit-profile-basic.jsp">Chỉnh sửa: Thông
+							<li><a href="edit-profile-basic.jsp?id=<%= request.getSession().getAttribute("user_id")%>">Chỉnh sửa: Thông
 									tin cơ bản</a></li>
-							<li><a href="edit-profile-work-edu.jsp">Chỉnh sửa: Công
+							<li><a href="edit-profile-work-edu.jsp?id=<%= request.getSession().getAttribute("user_id")%>">Chỉnh sửa: Công
 									việc</a></li>
-							<li><a href="edit-profile-interests.jsp">Chỉnh sửa: Sở
-									thích</a></li>
-							<li><a href="edit-profile-settings.jsp">Cài đặt tài
+							<li><a href="edit-profile-settings.jsp?id=<%= request.getSession().getAttribute("user_id")%>">Cài đặt tài
 									khoản</a></li>
-							<li><a href="edit-profile-password.jsp">Thay đổi mật
+							<li><a href="edit-profile-password.jsp?id=<%= request.getSession().getAttribute("user_id")%>">Thay đổi mật
 									khẩu</a></li>
 							<li><a href="logout">Đăng xuất</a></li>
 						</ul></li>

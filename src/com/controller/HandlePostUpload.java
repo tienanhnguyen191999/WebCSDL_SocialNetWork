@@ -63,6 +63,7 @@ public class HandlePostUpload extends HttpServlet{
 			System.out.println(req.getRequestURI());
 			// Send to /view/newfeed OR   /view/timeline
 			String append = req.getSession().getAttribute("url").toString().equals("timeline") == true? "?id=" + req.getSession().getAttribute("user_id").toString() : "";
+			Thread.sleep(2000);
 			resp.sendRedirect(req.getSession().getAttribute("url").toString() + append);
 		}catch( SQLException ex) {
 			ex.printStackTrace();

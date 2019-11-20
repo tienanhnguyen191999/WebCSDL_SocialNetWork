@@ -287,8 +287,8 @@
 													data: { content: val, user_id:<%=rs.getInt("user_id")%> , post_id: <%=rs.getInt("post_id")%>},
 													success: function(data){
 														var arr = data.split("|");
+														$(".allComment").append('<div class="post-comment"><img src="images/user/<%= request.getSession().getAttribute("avatar") %>" alt="" class="profile-photo-sm" /><p><a href="timeline.jsp" class="profile-link"><%= request.getSession().getAttribute("fname") %></a>&nbsp;' + $("#commentContent<%=i%>").val() + '</p></div>');
 														$("#commentContent<%=i%>").val("");
-														$("#commentContainer<%=i%>").append('<div class="post-comment"><img src="images/user/' + arr[2] + '" alt="" class="profile-photo-sm" /><p><a href="timeline.jsp" class="profile-link">' + arr[1]+ '</a>&nbsp;' + $("#commentContent<%=i%>").val() + '</p></div>');
 													}
 												})
 											}	
@@ -304,7 +304,7 @@
 														data: { content: val, user_id:<%=rs.getInt("user_id")%> , post_id: <%=rs.getInt("post_id")%>},
 														success: function(data){
 															var arr = data.split("|");
-															$(".allComment").append('<div class="post-comment"><img src="images/user/' + arr[2] + '" alt="" class="profile-photo-sm" /><p><a href="timeline.jsp" class="profile-link">' + arr[1]+ '</a>&nbsp;' +$("#commentContent<%=i%>").val() + '</p></div>');
+															$(".allComment").append('<div class="post-comment"><img src="images/user/<%= request.getSession().getAttribute("avatar") %>" alt="" class="profile-photo-sm" /><p><a href="timeline.jsp" class="profile-link"><%= request.getSession().getAttribute("fname") %></a>&nbsp;' + $("#commentContent<%=i%>").val() + '</p></div>');
 															$("#commentContent<%=i%>").val("");
 														}
 													})

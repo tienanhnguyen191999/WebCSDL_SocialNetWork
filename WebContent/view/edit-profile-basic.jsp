@@ -87,6 +87,7 @@
 				<!--Timeline Menu for Small Screens End-->
 
 			</div>
+			
 			<div id="page-contents">
 				<div class="row">
 					<div class="col-md-3">

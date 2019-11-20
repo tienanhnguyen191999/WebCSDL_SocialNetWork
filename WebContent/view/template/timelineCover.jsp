@@ -16,8 +16,6 @@
 		})
 	</script>
 	<%
-		out.print(request.getSession().getAttribute("user_id") + " " + id);
-		out.print(request.getSession().getAttribute("user_id").toString().equals(id));
 		if (request.getSession().getAttribute("user_id").toString().equals(id)) {
 	%>
 	<i data-toggle="modal" data-target="#updatePoster"
@@ -46,7 +44,9 @@
 								class="fa fa-upload" aria-hidden="true"></i> <input type="file"
 								id="inputPoster" name="poster" required>
 						</div>
-						<img src="#" alt="" id="imagePreview1" />
+						<div>
+							<img style="max-width: 570px;" 'src="#" alt="" id="imagePreview1" />
+						</div>
 					</div>
 					<script type="text/javascript">
 						$(document)
